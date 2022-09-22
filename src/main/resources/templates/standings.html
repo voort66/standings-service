@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Standings World Cup 2022 - Qatar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}"/>
+</head>
+<body>
+<div id="standings-group-tables" th:each="group: ${standings.groups}">
+
+    <div id="group-table">
+        <div id="group-table-caption" th:text="${group.groupName}"/>
+        <div id="group-table-header">
+            <div class="table-header-cell">
+                Team
+            </div>
+            <div class="table-header-cell">
+                Played
+            </div>
+            <div class="table-header-cell">
+                Pts
+            </div>
+            <div class="table-header-cell">
+                W
+            </div>
+            <div class="table-header-cell">
+                L
+            </div>
+            <div class="table-header-cell">
+                D
+            </div>
+            <div class="table-header-cell">
+                GD
+            </div>
+        </div>
+        <div id="standings-table-body" th:each="teamResult: ${group.teamResults}">
+
+            <div class="table-body-cell">
+                <span><img class="logo" th:src="${teamResult.team.logo}"/></span><span
+                    th:text="${teamResult.team.name}"/>
+            </div>
+            <div class="table-body-cell" th:text="${teamResult.all.played}"/>
+            <div class="table-body-cell" th:text="${teamResult.points}"/>
+            <div class="table-body-cell" th:text="${teamResult.all.win}"/>
+            <div class="table-body-cell" th:text="${teamResult.all.loss}"/>
+            <div class="table-body-cell" th:text="${teamResult.all.draw}"/>
+            <div class="table-body-cell" th:text="${teamResult.goalsDiff}"/>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

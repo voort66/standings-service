@@ -1,0 +1,47 @@
+*{font-family: sans-serif;}
+
+#group-table {
+width: 100%;
+display: table;
+margin-bottom: 10px;
+}
+
+#group-table-caption{
+display: table-caption;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+
+#group-table-header{
+display: table-header-group;
+background-color: gray;
+font-weight: bold;
+font-size: 25px;
+}
+
+.table-header-cell{
+display: table-cell;
+padding: 10px;
+text-align: justify;
+border-bottom: 1px solid black;
+}
+
+#standings-group-tables {
+    width: 100%;
+}
+
+#standings-table-body{
+display: table-row-group;
+
+}
+
+.table-body-cell{
+    display: table-cell;
+    text-align: justify;
+}
+
+.logo {
+    width: 20px;
+    height: 20px;
+}
